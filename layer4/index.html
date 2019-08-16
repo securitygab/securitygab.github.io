@@ -1,318 +1,114 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
-		<script type="text/javascript" src="js/highcharts.js"></script>
-		<script type="text/javascript" src="js/exporting.js"></script>
-		<script>
-		var chart; // global
-		var pointx = null;
-		/**
-		 * Request data from the server, add it to the graph and set a timeout to request again
-		 */
-		function requestData() {
-			$.ajax({
-				url: 'api.php?ip=51.15.144.131&type=4_pub&token=5d560019cd548', 
-				success: function(point) {
-					var series = chart.series[0],
-					shift = series.data.length > 20; // shift if the series is longer than 20
-				        chart.series[0].addPoint([Math.floor($.now()),point], true, shift);
-					setTimeout(requestData, 1000);	
-				},
-				cache: false
-			});
-		}
-			
-		$(document).ready(function() {
-			chart = new Highcharts.Chart({
-				chart: {
-                    zoomType: 'x',
-					renderTo: 'container',
-					defaultSeriesType: 'spline',
-					events: {
-						load: requestData
-					}
-				},
-				title: {
-				  text: 'Layer4_pub Graph - 51.15.144.131'
-				 },
-				subtitle: {
-				  text: document.ontouchstart === undefined ?
-				  'Takes up to 300 seconds to update' : 'Takes up to 300 seconds to update'
-				},
-				xAxis: {
-					type: 'datetime'
-				},
-				yAxis: {
-					min: 0,     
-                     title: {
-					  text: 'GB per seconds'
-					}
-				},
-				legend: {
-				   enabled: false
-				 },
-				plotOptions: {
-				     area: {
-				        fillColor: {
-				         linearGradient: {
-				             x1: 0,
-				             y1: 0,
-				             x2: 0,
-				             y2: 1
-				          },
-				       stops: [
-				        [0, Highcharts.getOptions().colors[0]],
-				        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                		   ]
-              		        },
-              		        marker: {
-              		         radius: 1,
-							 enabled: false,
-              		          },
-              		         lineWidth: 1,
-              		          states: {
-              		          hover: {
-              		           lineWidth: 1
-              		          }
-              		        },
-              		         threshold: null
-              		          }
-              		        },
-			        series: [{
-                    type: 'area',
-					name: 'GB per seconds',
-					data: []
-				},{
-                    type: 'area',
-					name: 'GB per seconds',
-					data: []
-				},]
-			});		
-		});
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Layer4 securitygab">
+    <meta name="keywords" content="online,live,dstat,graph,Layer7 Dstat securitygab">
+    <meta name="author" content="Securitygab - KuroiSH">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <title>Securitygab - KuroiSH - しら
+    </title>
 
-		Highcharts.createElement('link', {
-		   href: 'https://fonts.googleapis.com/css?family=Unica+One',
-		   rel: 'stylesheet',
-		   type: 'text/css'
-		}, null, document.getElementsByTagName('head')[0]);
- 
-		Highcharts.theme = {
-	       colors: ['#dc3545', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
-		      '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
-		   chart: {
-		      backgroundColor: {
-		         
-		      },
-		      style: {
-		         fontFamily: '\'Unica One\', sans-serif'
-		      },
-		      plotBorderColor: '#606063'
-		   },
- 		  title: {
- 		     style: {
-		         color: '#E0E0E3',
-		         textTransform: 'uppercase',
-		         fontSize: '20px'
-		      }
-		   },
-		   subtitle: {
-		      style: {
-		         color: '#E0E0E3',
-		         textTransform: 'uppercase'
-		      }
-		   },
-		   xAxis: {
-		      gridLineColor: '#707073',
-		      labels: {
-		         style: {
-		            color: '#E0E0E3'
-		         }
-		      },
-		      lineColor: '#707073',
-		      minorGridLineColor: '#505053',
-		      tickColor: '#707073',
-		      title: {
-		         style: {
-		            color: '#A0A0A3'
+<center>
+    <ruby>
+Securitygab - KuroiSH <rt> This is a layer 4 what will shown public !ˋ </rt>
+</ruby>
+   <br>
+<body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
+  
+<iframe src="http://dstat.live/176.9.247.218"></iframe>
+    <br>
+ <br>
+<div class="container">
+  <h2>Found vulns</h2>
+  <p>Hackers who found a vuln in this website</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Securitygab</td>
+        <td>Knon</td>
+        <td>securitygab@kuroish.online</td>
+         <td>Job: Found a layer 4 ATUM</td>
+      </tr>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <SCRIPT language=JavaScript>
 
- 		         }
-		      }
-		   },
- 		  yAxis: {
-		      gridLineColor: '#707073',
-		      labels: {
-		         style: {
-		            color: '#E0E0E3'
-		         }
-		      },
-		      lineColor: '#707073',
-		      minorGridLineColor: '#505053',
-		      tickColor: '#707073',
-		      tickWidth: 1,
-		      title: {
-		         style: {
-		            color: '#A0A0A3'
-		         }
-		      }
-		   },
-		   tooltip: {
-		      backgroundColor: 'rgba(0, 0, 0, 0.85)',
-		      style: {
-		         color: '#FFF'
-		      }
-		   },
-		   plotOptions: {
-		      series: {
-		         dataLabels: {
- 		           color: '#B0B0B3'
-		         },
- 		        marker: {
- 		           lineColor: '#333'
- 		        }
-		      },
-		      boxplot: {
- 		        fillColor: '#505053'
-		      },
-		      candlestick: {
-		         lineColor: 'white'
-		      },
-		      errorbar: {
-		         color: 'white'
-		      }
-		   },
-		   legend: {
-		      itemStyle: {
-		         color: '#E0E0E3'
-		      },
-		      itemHoverStyle: {
- 		        color: '#FFF'
-		      },
-		      itemHiddenStyle: {
-		         color: '#606063'
-		     }
-		   },
-		   credits: {
-		      style: {
-		         color: '#666'
-		      }
-		   },
-		   labels: {
- 		     style: {
- 		        color: '#707073'
-		      }
-		   },
 
-		   drilldown: {
- 		     activeAxisLabelStyle: {
-		         color: '#F0F0F3'
-		      },
-		      activeDataLabelStyle: {
-		         color: '#F0F0F3'
-		      }
-		   },
+<!-- http://www.kuroish.online -->
 
-		   navigation: {
-		      buttonOptions: {
-		         symbolStroke: '#DDDDDD',
-		         theme: {
-		            fill: '#505053'
-		         }
-		      }
-		   },
+var message = "Trying to getting the website isnt allowed! Hope you understood this";
 
-		   // scroll charts
-		   rangeSelector: {
-		      buttonTheme: {
-		         fill: '#505053',
- 		        stroke: '#000000',
-		         style: {
- 		           color: '#CCC'
- 		        },
- 		        states: {
-  		          hover: {
- 		              fill: '#707073',
- 		              stroke: '#000000',
- 		              style: {
- 		                 color: 'white'
- 		              }
-		            },
-		            select: {
-		               fill: '#000003',
- 		              stroke: '#000000',
-		               style: {
-		                  color: 'white'
-		               }
- 		           }
- 		        }
-		      },
-		      inputBoxBorderColor: '#505053',
-		      inputStyle: {
-		         backgroundColor: '#333',
-		         color: 'white'
-		      },
-		      labelStyle: {
-		         color: 'white'
-		      }
-		   },
+function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
 
-		   navigator: {
-		      handles: {
-		         backgroundColor: '#666',
-		         borderColor: '#AAA'
-		      },
-		      outlineColor: '#CCC',
-		      maskFill: 'rgba(255,255,255,0.1)',
- 		     series: {
-		        color: '#7798BF',
-		         lineColor: '#A6C7ED'
-		      },
-		      xAxis: {
-		         gridLineColor: '#505053'
-		      }
-		   },
+if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
 
-		   scrollbar: {
-		      barBackgroundColor: '#808083',
-		      barBorderColor: '#808083',
-		      buttonArrowColor: '#CCC',
-		      buttonBackgroundColor: '#606063',
- 		      buttonBorderColor: '#606063',
-		      rifleColor: '#FFF',
-		      trackBackgroundColor: '#404043',
-		      trackBorderColor: '#404043'
-		  },
+document.onmousedown = rtclickcheck;
 
-		   // special colors for some of the
-		   legendBackgroundColor: 'rgba(0, 0, 0, 0.5)',
-		   background2: '#505053',
-		   dataLabelsColor: '#B0B0B3',
-		   textColor: '#FFF',
-		   contrastTextColor: '#F0F0F3',
-		   maskColor: 'rgba(255,255,255,0.3)'
-		};
+<script type="text/javascript">
+    function mousehandler(e) {
+        var myevent = (isNS) ? e : event;
+        var eventbutton = (isNS) ? myevent.which : myevent.button;
+        if ((eventbutton == 2) || (eventbutton == 3)) return false;
+    }
+    document.oncontextmenu = mischandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+    function disableCtrlKeyCombination(e) {
+        var forbiddenKeys = new Array("a", "s", "c", "x","u");
+        var key;
+        var isCtrl;
+        if (window.event) {
+            key = window.event.keyCode;
+            //IE
+            if (window.event.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        else {
+            key = e.which;
+            //firefox
+            if (e.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        if (isCtrl) {
+            for (i = 0; i < forbiddenKeys.length; i++) {
+                //case-insensitive comparation
+                if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+</script>
+    
 
-		// Apply the theme
-		Highcharts.setOptions(Highcharts.theme);
-	</script><link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet" type="text/css">	
-	<style>
-	.full {
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-	 }
-	 #container {
-		position: relative;
-	}
 
-	#background {
-		position: relative;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		z-index: -1;
-		overflow: hidden;
-}
-  </style>
-</head>
+	
+	
+    <footer>
+  <p>Posted by: Securitygab - KuroiSH</p>
+  <p>Contact information: <a href="mailto:securitygab@kuroish.online">Contact me for issues</a>.</p>
+</footer>
+    </center>
+</html>
