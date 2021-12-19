@@ -2,4 +2,5 @@ User-agent: *
 Disallow: /assets/
 Disallow: /portal/
 Disallow: /admin/
+Disallow: /layer4/
 Disallow: giftcards.html
